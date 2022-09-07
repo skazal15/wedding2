@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 from flask_caching import Cache
 import os
+from odm.data import WishPost,WishGet
 
 root_dir = os.path.abspath(os.path.dirname(__file__))
 template_dir = os.path.join(root_dir,'templates')
@@ -28,7 +29,14 @@ app.config.from_mapping(config)
 cache = Cache(app)
 
 @app.route('/',methods=['POST','GET'])
-@cache.cached(timeout=50)
+@cache.cached(timeout=1)
 def home():
     receive = request.args.get('kepada')
     return render_template('index444b.html',datadate=datadate,receive=receive,male=male,female=female,couple=couple,date=date,pfemale=pfemale,pmale=pmale,day=day,atime=atime,start=start,end=end,nameplace=nameplace,address=address,rekening1=rekening1,norekening1=norekening1,rekening=rekening,norekening=norekening)
+
+@app.route('/post',methods=['POST','GET'])
+def post():
+    nama = request.form.get('nama')
+    doa = request.form.get('doa')
+    hadir = request.form.get('hadir')
+    WishPost(nama,doa,hadir)

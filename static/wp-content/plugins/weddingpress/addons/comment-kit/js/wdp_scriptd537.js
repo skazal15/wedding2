@@ -206,7 +206,7 @@ jQuery(document).ready(function ($) {
     else {
       // VALIDAR CAMPOS DE TEXTO
       if ($(this).find('input#author').length < 30) {
-        var $author = $(this).find('input#author');
+        var $author = $(this).find('input#nama');
         var $authorVal = $author.val().replace(/\s+/g, ' ');
         var $authorRegEx = /^[^?%$=\/]{1,30}$/i;
 
