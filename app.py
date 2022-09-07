@@ -11,7 +11,7 @@ female = "Dyah Puspita Sari,S.P.,M.P"
 couple = "Said & Dyah"
 date = "16 Oktober 2022"
 pfemale = "Putri pertama dari Bapak Sugiyono, S.Pd., M.Pd & Ibu Dewi Variyanti, S.Pd"
-pmale = "Putra pertama dari Bapak Dra.Andi Setiawan & Ibu Dra.Aini Almadany"
+pmale = "Putra pertama dari Bapak Andi Setiawan,S.E. & Ibu Aini Almadany,S.E."
 day = "Minggu"
 atime = "Pukul 08:00 WIB"
 start = "10:00"
@@ -22,7 +22,7 @@ rekening1 = "Muhammad Sai'd Fadhiil"
 datadate = "1665854396"
 norekening1 = "0700009709259"
 rekening = "Dyah Puspita Sari"
-norekening = "000000000"
+norekening = "025601081686503"
 app = Flask(__name__,static_folder=static_dir,template_folder=template_dir)
 app.config.from_mapping(config)
 cache = Cache(app)
