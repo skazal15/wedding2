@@ -1,8 +1,8 @@
 import requests
-from models.wish import Wish
+from odm.wish import Wish
 
-api_wish_post = 'http://localhost/nikah/wedding.php'
-api_wish_get = 'http://localhost/nikah/wedding_getdata.php'
+api_wish_post = 'http://localhost:8004/nikah/wedding.php'
+api_wish_get = 'http://localhost:8004/nikah/wedding_getdata.php'
 
 class WishPost():
     def __init__(self,nama,doa,hadir) -> None:
@@ -14,9 +14,8 @@ class WishPost():
         requests.post(api_wish_post,json=body)
 
 class WishGet():
-    def __init__(self) -> None:
+    def getData(self):
         Response=requests.get(api_wish_get)
         wish = Response.json()
-        Wish.nama = wish['nama']
-        Wish.doa = Wish['doa']
-        Wish.hadir = Wish['hadir']
+
+        return wish

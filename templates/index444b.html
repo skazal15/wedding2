@@ -121,7 +121,7 @@ var pp = {"ajax_url":"https:\/\/weddingkita.net\/wp-admin\/admin-ajax.php"};
                                                                         <div class="wdp-name">{{receive}}</div>
                                                                                     <div class="wdp-text" >Mohon maaf apabila ada salah penulisan nama atau gelar</div>
                                                                                                                 <div class="wdp-button-wrapper" id="wdp-button-wrapper">
-                                        <button class="elementor-button">
+                                        <button class="elementor-button" onclick="start_scroll_down()">
                                                                                         <span >
                                                 <i aria-hidden="true" class="fas fa-envelope-open-text"></i>                                            </span>
                                                                                         Buka Undangan                                        </button>
@@ -388,7 +388,7 @@ var pp = {"ajax_url":"https:\/\/weddingkita.net\/wp-admin\/admin-ajax.php"};
 				</div>
 				<div class="elementor-element elementor-element-239dda4c animated-slow wdp-sticky-section-no elementor-invisible elementor-widget elementor-widget-text-editor" data-id="239dda4c" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-							<p>Pukul {{start}} &#8211; {{end}} WIB</p>						</div>
+							<p>Pukul {{start}} WIB &#8211; {{end}} </p>						</div>
 				</div>
 				<div class="elementor-element elementor-element-54680b0b animated-slow wdp-sticky-section-no elementor-invisible elementor-widget elementor-widget-text-editor" data-id="54680b0b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
@@ -718,9 +718,10 @@ var pp = {"ajax_url":"https:\/\/weddingkita.net\/wp-admin\/admin-ajax.php"};
 					</span>
 					<span class="wdp-error-info wdp-error-info-name">Mohon maaf! Khusus untuk tamu undangan</span></p><div class="wdp-wrap-textarea"><textarea id="wdp-textarea-8725" class="waci_comment wdp-textarea autosize-textarea" name="doa" aria-required="true" placeholder="Berikan Ucapan & Doa " rows="3"></textarea><span class="wdp-required">*</span><span class="wdp-error-info wdp-error-info-text">Minimal 2 karakter.</span></div>
 
-        <div class="wdp-wrap-select"><select class="waci_comment wdp-select" name="hadir1"><option value="" disabled selected>Konfirmasi Kehadiran</option>></option><option value="Hadir">Hadir</option><option value="Tidak Hadir">Tidak Hadir</option></select><span class="wdp-required">*</span><span class="wdp-error-info wdp-error-info-confirm">Silahkan pilih konfirmasi kehadiran</span></div><div class='wdp-wrap-submit wdp-clearfix'><p class='form-submit'><input name='submit' id='submit-8725' value='Kirim' type='submit' /><input type='hidden' name='commentpress' value='true' /><input type='hidden' name='comment_post_ID' value='8725' id='comment_post_ID' />
+        <div class="wdp-wrap-select"><select class="waci_comment wdp-select" name="hadir"><option value="" disabled selected>Konfirmasi Kehadiran</option>></option><option value="Hadir">Hadir</option><option value="Tidak Hadir">Tidak Hadir</option></select><span class="wdp-required">*</span><span class="wdp-error-info wdp-error-info-confirm">Silahkan pilih konfirmasi kehadiran</span></div><div class='wdp-wrap-submit wdp-clearfix'><p class='form-submit'><input name='submit' id='submit-8725' value='Kirim' type='submit' /><input type='hidden' name='commentpress' value='true' /><input type='hidden' name='comment_post_ID' value='8725' id='comment_post_ID' />
 <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-</p></div></form></div></div><!--.wdp-container-form--></div><!--.wdp-wrap-form--><ul id='wdp-container-comment-8725' class='wdp-container-comments wdp-order-DESC  wdp-has-4-comments wdp-multiple-comments' data-order='DESC'></ul><div class='wdp-holder-8725 wdp-holder'></div></div><!--.wdp-wrap-comments--></div><!--.wdp-wrapper-->		</div>
+</p></div></form></div></div><!--.wdp-container-form--></div><!--.wdp-wrap-form-->
+<ul id='wdp-container-comment-8725' class='wdp-container-comments wdp-order-DESC  wdp-has-4-comments wdp-multiple-comments' data-order='DESC'></ul><div class='wdp-holder-8725 wdp-holder'></div></div><!--.wdp-wrap-comments--></div><!--.wdp-wrapper-->		</div>
 				</div>
 				<div class="elementor-element elementor-element-18eb4062 animated-slow wdp-sticky-section-no elementor-widget elementor-widget-text-editor" data-id="18eb4062" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
@@ -794,6 +795,8 @@ var pp = {"ajax_url":"https:\/\/weddingkita.net\/wp-admin\/admin-ajax.php"};
 			window.settingAutoplay = settingAutoplay === 'disable' ? false : true;
 		</script>
 
+	
+
 		<div id="audio-container" class="audio-box">			
 
 			<audio id="song" loop>
@@ -808,7 +811,7 @@ var pp = {"ajax_url":"https:\/\/weddingkita.net\/wp-admin\/admin-ajax.php"};
 
 			<div class="elementor-icon-wrapper" id="mute-sound" style="display: none;">
 				<div class="elementor-icon">
-				<i aria-hidden="true" class="far fa-pause-circle"></i>				</div>
+				<i aria-hidden="true" class="far fa-pause-circle" onclick="stop_scroll_down()"></i>				</div>
 			</div>
 			
 		</div>
@@ -1280,6 +1283,17 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 /* <![CDATA[ */
 var cevar = {"ajax_url":"https:\/\/weddingkita.net\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/weddingkita.net\/wp-content\/plugins\/weddingpress\/"};
 /* ]]> */
+</script>
+<script>
+function start_scroll_down() { 
+   scroll = setInterval(function(){ window.scrollBy(0, 1); console.log('start');},15);
+   
+}
+
+function stop_scroll_down() {
+    clearInterval(scroll);
+}
+
 </script>
 <script type='text/javascript' src='/static/wp-content/plugins/weddingpress/assets/js/wdp.min19ce.js?ver=3.0.3' id='weddingpress-wdp-js'></script>
 <script type='text/javascript' src='/static/wp-content/plugins/weddingpress/assets/js/guest-form19ce.js?ver=3.0.3' id='kirim-kit-js'></script>
