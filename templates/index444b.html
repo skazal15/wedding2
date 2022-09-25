@@ -276,7 +276,7 @@ var pp = {"ajax_url":"https:\/\/weddingkita.net\/wp-admin\/admin-ajax.php"};
 				</div>
 				<div class="elementor-element elementor-element-73276ca4 wdp-sticky-section-no elementor-widget elementor-widget-image" data-id="73276ca4" data-element_type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img width="800" height="974" src="/static/wp-content/uploads/2022/01/female.png" class="attachment-large size-large" alt="" loading="lazy" sizes="(max-width: 800px) 100vw, 800px" />															</div>
+															<img width="800" height="974" src="/static/wp-content/uploads/2022/01/{{fotofemale}}" class="attachment-large size-large" alt="" loading="lazy" sizes="(max-width: 800px) 100vw, 800px" />															</div>
 				</div>
 				<div class="elementor-element elementor-element-4906503e animated-slow wdp-sticky-section-no elementor-invisible elementor-widget elementor-widget-heading" data-id="4906503e" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
@@ -299,7 +299,7 @@ var pp = {"ajax_url":"https:\/\/weddingkita.net\/wp-admin\/admin-ajax.php"};
 				</div>
 				<div class="elementor-element elementor-element-2cd25fed wdp-sticky-section-no elementor-widget elementor-widget-image" data-id="2cd25fed" data-element_type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img width="800" height="979" src="/static/wp-content/uploads/2022/01/male.png" class="attachment-large size-large" alt="" loading="lazy" sizes="(max-width: 800px) 100vw, 800px" />															</div>
+															<img width="800" height="979" src="/static/wp-content/uploads/2022/01/{{fotomale}}" class="attachment-large size-large" alt="" loading="lazy" sizes="(max-width: 800px) 100vw, 800px" />															</div>
 				</div>
 				<div class="elementor-element elementor-element-2d1cc33f animated-slow wdp-sticky-section-no elementor-invisible elementor-widget elementor-widget-heading" data-id="2d1cc33f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
@@ -718,13 +718,43 @@ var pp = {"ajax_url":"https:\/\/weddingkita.net\/wp-admin\/admin-ajax.php"};
 
         <div class="wdp-wrap-select"><select class="waci_comment wdp-select" name="hadir"><option value="" disabled selected>Konfirmasi Kehadiran</option>></option><option value="Hadir">Hadir</option><option value="Tidak Hadir">Tidak Hadir</option></select><span class="wdp-required">*</span><span class="wdp-error-info wdp-error-info-confirm">Silahkan pilih konfirmasi kehadiran</span></div><div class='wdp-wrap-submit wdp-clearfix'><p class='form-submit'><input name='submit' id='submit-8725' value='Kirim' type='submit' /><input type='hidden' name='commentpress' value='true' /><input type='hidden' name='comment_post_ID' value='8725' id='comment_post_ID' />
 <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-</p></div></form></div></div><!--.wdp-container-form--></div><!--.wdp-wrap-form-->
-<ul id='wdp-container-comment-8725' class='wdp-container-comments wdp-order-DESC  wdp-has-4-comments wdp-multiple-comments' data-order='DESC'></ul><div class='wdp-holder-8725 wdp-holder'></div></div><!--.wdp-wrap-comments--></div><!--.wdp-wrapper-->		</div>
+</p></div></form></div></div>
+<!--.wdp-container-form-->
+</div><!--.wdp-wrap-form-->
+<div class='wdp-holder-8725 wdp-holder'>
+
+</div>
+</div><!--.wdp-wrap-comments-->
+</div><!--.wdp-wrapper-->		</div>
 				</div>
+				<div i style="display: none;"></div>
 				<div class="elementor-element elementor-element-18eb4062 animated-slow wdp-sticky-section-no elementor-widget elementor-widget-text-editor" data-id="18eb4062" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
 							<p>Doa restu anda sangat berarti bagi kami</p>						</div>
 				</div>
+				<ul id="wdp-container-comment-13224" class="wdp-container-comments wdp-order-DESC  wdp-has-21-comments wdp-multiple-comments" style="display: block; overflow: scroll; height: 90px;">
+					{% for col in records%}
+					<li class="comment even thread-even depth-1 wdp-item-comment animated jp-hidden" id="wdp-item-comment-511" data-likes="0">
+						<div id="wdp-comment-511" class="wdp-comment wdp-clearfix">
+							<div class="wdp-comment-content">
+								<div class="wdp-comment-info">
+									<a class="wdp-commenter-name" title="Tes">{{col['nama']}}</a>
+									<span class="wdp-post-author" style="background-color: brown; color: white; border-radius: 10px; padding: 2px;"><i class="fas fa-check-circle"></i>{{col['hadir']}}</span>
+									<br>
+								</div><!--.wdp-comment-info-->
+								<div class="wdp-comment-text">
+									<p>{{col['doa']}}</p>
+								</div><!--.wdp-comment-text-->
+								<div class="wdp-comment-actions">	
+								</div><!--.wdp-comment-actions-->
+							</div><!--.wdp-comment-content-->
+						</div><!--.wdp-comment-->
+					
+						<!--</li>-->
+					</li><!-- #comment-## -->
+					<br>
+					{% endfor %}
+				</ul>
 					</div>
 		</div>
 							</div>
@@ -1021,20 +1051,7 @@ var pp = {"ajax_url":"https:\/\/weddingkita.net\/wp-admin\/admin-ajax.php"};
 					
 		<div class="elementor-image img"></div>
 
-		<div class="head-title">Alamat Kirim Kado</div>
-		<div class="elementor-button-wrapper">
-						<div class="copy-content spancontent">Jl. Serimpi V No. 338, RT. 04, RW. 010, Kelurahan Mekarjaya, Kecamatan Sukmajaya, Kota Depok 16411</div>
-				
-			<a style="cursor:pointer;" onclick="copyText(this)" data-message="Berhasil disalin" class="elementor-button" role="button">
-				
-		<div class="elementor-button-content-wrapper">
-						<span class="elementor-button-icon elementor-align-icon-left">
-				<i aria-hidden="true" class="far fa-copy"></i>			</span>
-						<span class="elementor-button-text">Copy Alamat</span>
-		</div>
-					</a>
-			
-		</div>
+		
 
 		<style type="text/css">
 			.spancontent {

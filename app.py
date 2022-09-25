@@ -7,26 +7,12 @@ root_dir = os.path.abspath(os.path.dirname(__file__))
 template_dir = os.path.join(root_dir,'templates')
 static_dir = os.path.join(root_dir,'static')
 #config = {'CACHE_TYPE':'SimpleCache'}
-male="Muhammad Sai'd Fadhiil,S.T."
-female = "Dyah Puspita Sari,S.P.,M.P"
-couple = "Said & Dyah"
-date = "16 Oktober 2022"
-pfemale = "Bapak Sugiyono, S.Pd., M.Pd & Ibu Dewi Variyanti, S.Pd"
-pmale = "Bapak Andi Setiawan, S.E. & Ibu Aini Almadany, S.E."
-day = "Minggu"
-atime = "08:00 WIB"
-start = "10:00"
-end = "Selesai"
-nameplace = "Gedung Institut Agama Islam Muhammad Azim (IAIMA)"
-rekening1 = "Muhammad Sai'd Fadhiil"
-norekening1 = "0700009709259"
-rekening = "Dyah Puspita Sari"
-norekening = "025601081686503"
-datadate = "1665854396"
-acarakami = "pernikahan kami"
-acaraortu = "pernikahan putra putri kami"
-redaxkami = "Kami yang berbahagia"
-redaxortu = "Hormat Kami yang Menanti"
+male=["Muhammad Sai'd Fadhiil,S.T.","Bapak Andi Setiawan, S.E. & Ibu Aini Almadany, S.E.","Muhammad Sai'd Fadhiil","0700009709259"]
+female = ["Dyah Puspita Sari,S.P.,M.P","Bapak Sugiyono, S.Pd., M.Pd & Ibu Dewi Variyanti, S.Pd","Dyah Puspita Sari","025601081686503"]
+other = ["Said & Dyah","16 Oktober 2022","Minggu","08:00 WIB","10:00","Selesai","Gedung Institut Agama Islam Muhammad Azim (IAIMA)",
+"1665854396","pernikahan kami","pernikahan putra putri kami","Kami yang berbahagia","Hormat Kami yang Menanti","male.png","malenew.png",
+"female.png","femalenew.png"]
+
 app = Flask(__name__,static_folder=static_dir,template_folder=template_dir)
 #app.config.from_mapping(config)
 #cache = Cache(app)
@@ -35,13 +21,21 @@ app = Flask(__name__,static_folder=static_dir,template_folder=template_dir)
 #@cache.cached(timeout=1)
 def our():
     receive = request.args.get('kepada')
-    return render_template('index444b.html',datadate=datadate,receive=receive,male=male,female=female,couple=couple,date=date,pfemale=pfemale,pmale=pmale,day=day,atime=atime,start=start,end=end,nameplace=nameplace,rekening1=rekening1,norekening1=norekening1,rekening=rekening,norekening=norekening,acara=acarakami,redax=redaxkami, view='kami')
+    records = WishGet().getData()
+    return render_template('index444b.html',datadate=other[7],receive=receive,male=male[0],
+    female=female[0],couple=other[0],date=other[1],pfemale=female[1],pmale=male[1],day=other[2],
+    atime=other[3],start=other[4],end=other[5],nameplace=other[6],rekening1=male[2],
+    norekening1=male[3],rekening=female[2],norekening=female[3],acara=other[8],redax=other[10],fotomale=other[12],fotofemale=other[14], view='kami', records=records)
 
 @app.route('/ortu',methods=['POST','GET'])
 #@cache.cached(timeout=1)
 def home():
     receive = request.args.get('kepada')
-    return render_template('index444b.html',datadate=datadate,receive=receive,male=male,female=female,couple=couple,date=date,pfemale=pfemale,pmale=pmale,day=day,atime=atime,start=start,end=end,nameplace=nameplace,rekening1=rekening1,norekening1=norekening1,rekening=rekening,norekening=norekening,acara=acaraortu,redax=redaxortu, view='ortu')
+    records = WishGet().getData()
+    return render_template('index444b.html',datadate=other[7],receive=receive,male=male[0],
+    female=female[0],couple=other[0],date=other[1],pfemale=female[1],pmale=male[1],day=other[2],
+    atime=other[3],start=other[4],end=other[5],nameplace=other[6],rekening1=male[2],norekening1=male[3],
+    rekening=female[2],norekening=female[3],acara=other[9],redax=other[11],fotomale=other[13],fotofemale=other[15], view='ortu',records=records)
 
 @app.route('/post',methods=['POST','GET'])
 def post():
